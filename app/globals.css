@@ -1,0 +1,103 @@
+/* Redesigned global styles for a modern, professional, and visually appealing look */
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #22223b;
+  --primary: #4f8cff;
+  --secondary: #f1f5f9;
+  --accent: #e0e7ff;
+  --border-radius: 0.75rem;
+  --shadow: 0 2px 8px rgba(60, 60, 100, 0.08);
+  --font-sans: 'Inter', 'Geist', Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #181a1b;
+    --foreground: #f1f5f9;
+    --primary: #7faaff;
+    --secondary: #23272f;
+    --accent: #2d3142;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Buttons */
+button, .btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+button:hover, .btn:hover {
+  background: #2563eb;
+  box-shadow: 0 4px 16px rgba(60, 60, 100, 0.12);
+}
+
+/* Inputs */
+input, select, textarea {
+  border: 1px solid #d1d5db;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: #fff;
+  margin-bottom: 0.5rem;
+  box-shadow: var(--shadow);
+  transition: border 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* Cards */
+.card {
+  background: var(--secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+th {
+  background: var(--accent);
+  font-weight: 600;
+}
+tr:nth-child(even) td {
+  background: var(--secondary);
+}
+
+/* Utility */
+.rounded {
+  border-radius: var(--border-radius) !important;
+}
+.shadow {
+  box-shadow: var(--shadow) !important;
+}
